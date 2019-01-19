@@ -3,6 +3,7 @@
 ## x<- rbind(c(1,2), c(3,4))
 ## m<- makeCacheMatrix(x)
 ## cacheSolve(m)
+## function to create a matrix to cache it's inverse
 
 makeCacheMatrix <- function(x=matrix()){
   i <- NULL
@@ -21,6 +22,9 @@ makeCacheMatrix <- function(x=matrix()){
   }
   list(set= set, get= get, setinverse= setinverse, getinverse= getinverse)
 }
+## to calculate the inverse of the function , 
+## if the inverse is already calculated, it it taken from cache
+## otherwise the inverse is calculated and shown
 
 cacheSolve <- function(x){
   i <- x$getinverse()
